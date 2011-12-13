@@ -21,6 +21,7 @@
 _ReSharper*/
 *.resharper
 [Tt]est[Rr]esult*
+*.dotCover
 
 #Project files
 [Bb]uild/
