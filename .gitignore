@@ -44,3 +44,5 @@ buildlog.txt
 # XMLmind temporary files
 *.xml~
 
+#NuGet
+packages
