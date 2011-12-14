@@ -2,16 +2,42 @@
 
 <objects xmlns="http://www.springframework.net" >
 
-  <!-- add object definitions here -->
-  <object id="people" type="System.Collections.Generic.List&lt;Spring.IocQuickStart.VariableSources.Person>, mscorlib">
+  <object type="Spring.Objects.Factory.Config.VariablePlaceholderConfigurer, Spring.Core">
+    <property name="VariableSources">
+      <list>
+        <!-- Get values from traditional appSettings entry: -->
+        <object type="Spring.Objects.Factory.Config.ConfigSectionVariableSource, Spring.Core">
+          <property name="SectionNames" value="appSettings" />
+        </object>
+      </list>
+    </property>
+  </object>
+   
+  <object id="people" type="System.Collections.Generic.List&lt;Example.Person>, mscorlib">
     <constructor-arg>
-      <list element-type="Spring.IocQuickStart.VariableSources.Person, Spring.IocQuickStart.VariableSources">
-        <object type="Spring.IocQuickStart.VariableSources.Person, Spring.IocQuickStart.VariableSources">
+      <list element-type="Example.Person, Spring.IocQuickStart.VariableSources">
+        <object type="Example.Person, Spring.IocQuickStart.VariableSources">
           <property name="Name" value="Don" />
           <property name="Age" value="41" />
         </object>
+        
+        <object type="Example.Person, Spring.IocQuickStart.VariableSources">
+          <property name="Name" value="${Name.fromAppSetting}" />
+          <property name="Age" value="${Age.fromAppSetting}" />
+        </object>
+        
+        
       </list>
     </constructor-arg>
   </object>
-  
+
+
+  <!--
+  For future reference:
+  <object type="Spring.Objects.Factory.Config.ConnectionStringsVariableSource, Spring.Core" />
+  <object type="Spring.Objects.Factory.Config.ConfigSectionVariableSource, Spring.Core">
+    <property name="SectionNames" value="applicationSettings/q7991262.Properties.Settings,userSettings/q7991262.Properties.Settings,appSettings" />
+  </object>
+  -->
+
 </objects>

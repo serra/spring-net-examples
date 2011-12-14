@@ -1,4 +1,4 @@
-﻿namespace Spring.IocQuickStart.VariableSources
+﻿namespace Example
 {
     public class Person
     {

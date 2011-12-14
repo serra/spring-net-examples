@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Example;
 using Spring.Context.Support;
 
 namespace Spring.IocQuickStart.VariableSources
