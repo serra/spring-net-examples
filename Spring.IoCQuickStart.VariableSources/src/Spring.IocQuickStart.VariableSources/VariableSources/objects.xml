@@ -21,7 +21,12 @@
           <property name="SectionNames" value="userSettings/Spring.IocQuickStart.Properties.Settings" />
         </object>
 
-
+        <!-- From a Java-style properties file: -->
+        <object type="Spring.Objects.Factory.Config.PropertyFileVariableSource, Spring.Core">
+          <property name="Location" value="~\VariableSources\application.properties" />
+          <property name="IgnoreMissingResources" value="true"/>
+        </object>
+        
       </list>
     </property>
   </object>
@@ -43,12 +48,19 @@
           <property name="Name" value="${Name_fromApplicationSettings}" />
           <property name="Age" value="${Age_fromApplicationSettings}" />
         </object>
-        
+
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
           <property name="Name" value="${Name_fromUserSettings}" />
           <property name="Age" value="${Age_fromUserSettings}" />
         </object>
-        
+
+        <object type="Example.Person, Spring.IocQuickStart.VariableSources">
+          <property name="Name" value="${Name_fromPropertyFile}" />
+          <property name="Age" value="${Age_fromPropertyFile}" />
+        </object>
+
+
+
       </list>
     </constructor-arg>
   </object>
