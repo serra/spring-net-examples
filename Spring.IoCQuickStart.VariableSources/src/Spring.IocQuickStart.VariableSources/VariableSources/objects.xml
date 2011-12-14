@@ -5,10 +5,23 @@
   <object type="Spring.Objects.Factory.Config.VariablePlaceholderConfigurer, Spring.Core">
     <property name="VariableSources">
       <list>
-        <!-- Get values from traditional appSettings entry: -->
+        <!-- From traditional appSettings entry: -->
         <object type="Spring.Objects.Factory.Config.ConfigSectionVariableSource, Spring.Core">
           <property name="SectionNames" value="appSettings" />
         </object>
+        
+        <!-- From .net's ApplicationSettings: -->
+        <object type="Spring.Objects.Factory.Config.ConfigSectionVariableSource, Spring.Core">
+          <property name="SectionNames" value="applicationSettings/Spring.IocQuickStart.Properties.Settings" />
+        </object>
+
+        <!-- TODO: check if this actually reads from user settings, or always returns the default from app.config -->
+        <!-- From .net's UserSettings: -->
+        <object type="Spring.Objects.Factory.Config.ConfigSectionVariableSource, Spring.Core">
+          <property name="SectionNames" value="userSettings/Spring.IocQuickStart.Properties.Settings" />
+        </object>
+
+
       </list>
     </property>
   </object>
@@ -20,12 +33,21 @@
           <property name="Name" value="Don" />
           <property name="Age" value="41" />
         </object>
-        
+
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="${Name.fromAppSetting}" />
-          <property name="Age" value="${Age.fromAppSetting}" />
+          <property name="Name" value="${Name_fromAppSettings}" />
+          <property name="Age" value="${Age_fromAppSettings}" />
+        </object>
+
+        <object type="Example.Person, Spring.IocQuickStart.VariableSources">
+          <property name="Name" value="${Name_fromApplicationSettings}" />
+          <property name="Age" value="${Age_fromApplicationSettings}" />
         </object>
         
+        <object type="Example.Person, Spring.IocQuickStart.VariableSources">
+          <property name="Name" value="${Name_fromUserSettings}" />
+          <property name="Age" value="${Age_fromUserSettings}" />
+        </object>
         
       </list>
     </constructor-arg>
