@@ -27,6 +27,11 @@
           <property name="IgnoreMissingResources" value="true"/>
         </object>
         
+        <!-- From commandline arguments: -->
+        <object type="Spring.Objects.Factory.Config.CommandLineArgsVariableSource, Spring.Core">
+         
+        </object>
+        
       </list>
     </property>
   </object>
@@ -59,7 +64,14 @@
           <property name="Age" value="${Age_fromPropertyFile}" />
         </object>
 
-
+        <!-- 
+        Note this requires adding the following commandline parameters:
+        "/Name_fromCommandLineArgs:Roger /Age_fromCommandLineArgs:57"  
+        -->
+        <object type="Example.Person, Spring.IocQuickStart.VariableSources">
+          <property name="Name" value="${Name_fromCommandLineArgs}" />
+          <property name="Age" value="${Age_fromCommandLineArgs}" />
+        </object>
 
       </list>
     </constructor-arg>
