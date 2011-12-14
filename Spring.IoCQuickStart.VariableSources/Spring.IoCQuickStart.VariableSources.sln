@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spring.IocQuickStart.IVariableSource", "src\Spring.IocQuickStart.IVariableSource\Spring.IocQuickStart.IVariableSource.csproj", "{BB2FBBE8-4FB4-44FF-910E-7301307AC6DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spring.IocQuickStart.VariableSources", "src\Spring.IocQuickStart.VariableSources\Spring.IocQuickStart.VariableSources.csproj", "{BB2FBBE8-4FB4-44FF-910E-7301307AC6DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spring.IocQuickStart.IVariableSource.Test", "test\Spring.IocQuickStart.IVariableSource.Test\Spring.IocQuickStart.IVariableSource.Test.csproj", "{D30F2505-DA4E-4D7A-951E-70746F2CE4D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spring.IocQuickStart.VariableSources.Test", "test\Spring.IocQuickStart.VariableSources.Test\Spring.IocQuickStart.VariableSources.Test.csproj", "{D30F2505-DA4E-4D7A-951E-70746F2CE4D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
