@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<objects xmlns="http://www.springframework.net" >
+
+  <!-- add object definitions here -->
+  <object id="people" type="System.Collections.Generic.List&lt;Spring.IocQuickStart.VariableSources.Person>, mscorlib">
+    <constructor-arg>
+      <list element-type="Spring.IocQuickStart.VariableSources.Person, Spring.IocQuickStart.VariableSources">
+        <object type="Spring.IocQuickStart.VariableSources.Person, Spring.IocQuickStart.VariableSources">
+          <property name="Name" value="Don" />
+          <property name="Age" value="41" />
+        </object>
+      </list>
+    </constructor-arg>
+  </object>
+  
+</objects>
