@@ -29,7 +29,17 @@
         
         <!-- From commandline arguments: -->
         <object type="Spring.Objects.Factory.Config.CommandLineArgsVariableSource, Spring.Core">
-         
+
+        </object>
+        
+        <!-- From the registry: -->
+        <object type="Spring.Objects.Factory.Config.RegistryVariableSource, Spring.Core">
+          <property name="Key" value="HKEY_CURRENT_USER\SpringIocQuickStartVariableSources" />
+        </object>
+
+
+        <object type="Spring.Objects.Factory.Config.EnvironmentVariableSource, Spring.Core">
+
         </object>
         
       </list>
@@ -39,51 +49,53 @@
   <object id="people" type="System.Collections.Generic.List&lt;Example.Person>, mscorlib">
     <constructor-arg>
       <list element-type="Example.Person, Spring.IocQuickStart.VariableSources">
+        
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
           <property name="Name" value="Dick Whitman" />
           <property name="Age" value="41" />
         </object>
 
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="${betty.name}" />
-          <property name="Age" value="${betty.age}" />
+          <property name="Name" value="${betty_name}" />
+          <property name="Age" value="${betty_age}" />
         </object>
 
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="${peggy.name}" />
-          <property name="Age" value="${peggy.age}" />
+          <property name="Name" value="${peggy_name}" />
+          <property name="Age" value="${peggy_age}" />
         </object>
 
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="${peter.name}" />
-          <property name="Age" value="${peter.age}" />
+          <property name="Name" value="${peter_name}" />
+          <property name="Age" value="${peter_age}" />
         </object>
 
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="${joan.name}" />
-          <property name="Age" value="${joan.age}" />
+          <property name="Name" value="${joan_name}" />
+          <property name="Age" value="${joan_age}" />
+        </object>
+
+        <object type="Example.Person, Spring.IocQuickStart.VariableSources">
+          <property name="Name" value="${freddy_name}" />
+          <property name="Age" value="${freddy_age}" />
+        </object>
+
+        <object type="Example.Person, Spring.IocQuickStart.VariableSources">
+          <property name="Name" value="${ken_name}" />
+          <property name="Age" value="${ken_age}" />
         </object>
 
         <!-- 
-        Note this requires adding the following commandline parameters:
-        "/roger.name:Roger /roger.age:57"  
-        -->
+        Note: this requires adding the following commandline parameters:
+        "/roger_name:Roger /roger_age:57"  
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="${roger.name}" />
-          <property name="Age" value="${roger.age}" />
+          <property name="Name" value="${roger_name}" />
+          <property name="Age" value="${roger_age}" />
         </object>
+        -->
 
       </list>
     </constructor-arg>
   </object>
-
-
-  <!--
-  For future reference:
-  <object type="Spring.Objects.Factory.Config.ConnectionStringsVariableSource, Spring.Core" />
-  <object type="Spring.Objects.Factory.Config.ConfigSectionVariableSource, Spring.Core">
-    <property name="SectionNames" value="applicationSettings/q7991262.Properties.Settings,userSettings/q7991262.Properties.Settings,appSettings" />
-  </object>
-  -->
 
 </objects>

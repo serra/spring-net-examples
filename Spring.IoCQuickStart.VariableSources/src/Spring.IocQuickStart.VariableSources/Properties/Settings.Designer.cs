@@ -26,42 +26,42 @@ namespace Spring.IocQuickStart.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Peggy")]
-        public string Name_fromApplicationSettings {
+        public string peggy_name {
             get {
-                return ((string)(this["Name_fromApplicationSettings"]));
+                return ((string)(this["peggy_name"]));
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Peter")]
-        public string Name_fromUserSettings {
+        public string peter_name {
             get {
-                return ((string)(this["Name_fromUserSettings"]));
+                return ((string)(this["peter_name"]));
             }
             set {
-                this["Name_fromUserSettings"] = value;
+                this["peter_name"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("31")]
-        public int Age_fromUserSettings {
+        public int peter_age {
             get {
-                return ((int)(this["Age_fromUserSettings"]));
+                return ((int)(this["peter_age"]));
             }
             set {
-                this["Age_fromUserSettings"] = value;
+                this["peter_age"] = value;
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("29")]
-        public int Age_fromApplicationSettings {
+        public int peggy_age {
             get {
-                return ((int)(this["Age_fromApplicationSettings"]));
+                return ((int)(this["peggy_age"]));
             }
         }
     }
