@@ -25,7 +25,7 @@ namespace Spring.IocQuickStart.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Peggy")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Peggy Olson")]
         public string peggy_name {
             get {
                 return ((string)(this["peggy_name"]));
@@ -34,7 +34,7 @@ namespace Spring.IocQuickStart.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Peter")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Peter Campbell")]
         public string peter_name {
             get {
                 return ((string)(this["peter_name"]));
