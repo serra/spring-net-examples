@@ -40,37 +40,37 @@
     <constructor-arg>
       <list element-type="Example.Person, Spring.IocQuickStart.VariableSources">
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="Don" />
+          <property name="Name" value="Dick Whitman" />
           <property name="Age" value="41" />
         </object>
 
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="${Name_fromAppSettings}" />
-          <property name="Age" value="${Age_fromAppSettings}" />
+          <property name="Name" value="${betty.name}" />
+          <property name="Age" value="${betty.age}" />
         </object>
 
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="${Name_fromApplicationSettings}" />
-          <property name="Age" value="${Age_fromApplicationSettings}" />
+          <property name="Name" value="${peggy.name}" />
+          <property name="Age" value="${peggy.age}" />
         </object>
 
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="${Name_fromUserSettings}" />
-          <property name="Age" value="${Age_fromUserSettings}" />
+          <property name="Name" value="${peter.name}" />
+          <property name="Age" value="${peter.age}" />
         </object>
 
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="${Name_fromPropertyFile}" />
-          <property name="Age" value="${Age_fromPropertyFile}" />
+          <property name="Name" value="${joan.name}" />
+          <property name="Age" value="${joan.age}" />
         </object>
 
         <!-- 
         Note this requires adding the following commandline parameters:
-        "/Name_fromCommandLineArgs:Roger /Age_fromCommandLineArgs:57"  
+        "/roger.name:Roger /roger.age:57"  
         -->
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="${Name_fromCommandLineArgs}" />
-          <property name="Age" value="${Age_fromCommandLineArgs}" />
+          <property name="Name" value="${roger.name}" />
+          <property name="Age" value="${roger.age}" />
         </object>
 
       </list>
