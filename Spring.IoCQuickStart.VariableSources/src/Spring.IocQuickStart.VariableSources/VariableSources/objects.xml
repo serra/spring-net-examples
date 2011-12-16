@@ -5,11 +5,17 @@
   <object type="Spring.Objects.Factory.Config.VariablePlaceholderConfigurer, Spring.Core">
     <property name="VariableSources">
       <list>
+        
+        <!-- From a custom config section: -->
+        <object type="Spring.Objects.Factory.Config.ConfigSectionVariableSource, Spring.Core">
+          <property name="SectionNames" value="DonConfiguration" />
+        </object>
+
         <!-- From traditional appSettings entry: -->
         <object type="Spring.Objects.Factory.Config.ConfigSectionVariableSource, Spring.Core">
           <property name="SectionNames" value="appSettings" />
         </object>
-        
+
         <!-- From .net's ApplicationSettings: -->
         <object type="Spring.Objects.Factory.Config.ConfigSectionVariableSource, Spring.Core">
           <property name="SectionNames" value="applicationSettings/Spring.IocQuickStart.Properties.Settings" />
@@ -37,9 +43,20 @@
           <property name="Key" value="HKEY_CURRENT_USER\SpringIocQuickStartVariableSources" />
         </object>
 
-
+        <!-- From System.Environment.GetEnvironmentVariable(): -->
         <object type="Spring.Objects.Factory.Config.EnvironmentVariableSource, Spring.Core">
 
+        </object>
+
+        <!-- From a custom name-value collection: -->
+        <object type="Spring.Objects.Factory.Config.ConfigurableVariableSource, Spring.Core">
+          <property name="Variables">
+            <name-values>
+              <add key="midge_name" value="Midge Daniels"/>
+              <add key="midge_age" value="33"/>
+            </name-values>
+          </property>
+          
         </object>
         
       </list>
@@ -51,8 +68,8 @@
       <list element-type="Example.Person, Spring.IocQuickStart.VariableSources">
         
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
-          <property name="Name" value="Dick Whitman" />
-          <property name="Age" value="41" />
+          <property name="Name" value="${don_name}" />
+          <property name="Age" value="${don_age}" />
         </object>
 
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
@@ -83,6 +100,11 @@
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
           <property name="Name" value="${ken_name}" />
           <property name="Age" value="${ken_age}" />
+        </object>
+
+        <object type="Example.Person, Spring.IocQuickStart.VariableSources">
+          <property name="Name" value="${midge_name}" />
+          <property name="Age" value="${midge_age}" />
         </object>
 
         <!-- 
