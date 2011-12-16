@@ -14,7 +14,7 @@ namespace Spring.IocQuickStart.VariableSources
 
             try
             {
-                ListPepoleFromContext();
+                ListPeopleFromContext();
             }
             finally
             {
@@ -25,7 +25,7 @@ namespace Spring.IocQuickStart.VariableSources
             Console.ReadLine();
         }
 
-        private static void ListPepoleFromContext()
+        private static void ListPeopleFromContext()
         {
             var ctx = new XmlApplicationContext(@".\VariableSources\objects.xml");
             var people = (List<Person>) ctx["people"];
