@@ -63,6 +63,7 @@
     <Compile Include="VariableSources\Person.cs" />
     <Compile Include="VariableSources\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VariableSources\Specials.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

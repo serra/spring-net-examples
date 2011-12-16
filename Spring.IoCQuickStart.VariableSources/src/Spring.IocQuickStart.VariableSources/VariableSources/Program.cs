@@ -14,7 +14,11 @@ namespace Spring.IocQuickStart.VariableSources
 
             try
             {
-                ListPeopleFromContext();
+                var ctx = new XmlApplicationContext(@".\VariableSources\objects.xml");
+                
+                ListPeople(ctx);
+
+                ListSpecials(ctx);
             }
             finally
             {
@@ -25,15 +29,34 @@ namespace Spring.IocQuickStart.VariableSources
             Console.ReadLine();
         }
 
-        private static void ListPeopleFromContext()
+        private static void ListPeople(XmlApplicationContext ctx)
         {
-            var ctx = new XmlApplicationContext(@".\VariableSources\objects.xml");
+            Console.WriteLine("People");
+            Console.WriteLine("------");
+
             var people = (List<Person>) ctx["people"];
             foreach (var person in people)
             {
                 Console.WriteLine(person);
             }
+            Console.WriteLine();
         }
+
+        private static void ListSpecials(XmlApplicationContext ctx)
+        {
+            Console.WriteLine("Specials");
+            Console.WriteLine("--------");
+            
+            var specials = (Specials)ctx["specials"];
+
+            Console.WriteLine("{0}: {1}", "connection:    ", specials.ConnectionString);
+            Console.WriteLine("{0}: {1}", "provider:      ", specials.ProviderName);
+            Console.WriteLine("{0}: {1}", "desktop:       ", specials.SpecialFolder1);
+            Console.WriteLine("{0}: {1}", "program files: ", specials.SpecialFolder2);
+            Console.WriteLine();
+        }
+
+
 
         #region support
 

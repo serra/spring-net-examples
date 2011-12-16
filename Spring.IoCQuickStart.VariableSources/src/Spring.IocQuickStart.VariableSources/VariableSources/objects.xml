@@ -16,6 +16,14 @@
           <property name="SectionNames" value="appSettings" />
         </object>
 
+        <!-- 
+        Alternatively, you can specify a single ConfigSectionVariableSource, 
+        with multiple sections (seperate using "," no spaces): 
+        -->
+        <object type="Spring.Objects.Factory.Config.ConfigSectionVariableSource, Spring.Core">
+          <property name="SectionNames" value="DonConfiguration,appSettings" />
+        </object>
+
         <!-- From .net's ApplicationSettings: -->
         <object type="Spring.Objects.Factory.Config.ConfigSectionVariableSource, Spring.Core">
           <property name="SectionNames" value="applicationSettings/Spring.IocQuickStart.Properties.Settings" />
@@ -35,7 +43,8 @@
         
         <!-- From commandline arguments: -->
         <object type="Spring.Objects.Factory.Config.CommandLineArgsVariableSource, Spring.Core">
-
+          <property name="ArgumentPrefix" value ="/" /> <!-- optional; default: "/" -->
+          <property name="ValueSeparator" value=":" />  <!-- optional; default: ":" -->
         </object>
         
         <!-- From the registry: -->
@@ -56,8 +65,13 @@
               <add key="midge_age" value="33"/>
             </name-values>
           </property>
-          
         </object>
+
+        <!-- From .net's connection strings configuration section: -->
+        <object type="Spring.Objects.Factory.Config.ConnectionStringsVariableSource, Spring.Core" />
+
+        <!-- Retrieve the full path for some special folders: -->
+        <object type="Spring.Objects.Factory.Config.SpecialFolderVariableSource, Spring.Core" />
         
       </list>
     </property>
@@ -110,14 +124,25 @@
         <!-- 
         Note: this requires adding the following commandline parameters:
         "/roger_name:Roger /roger_age:57"  
+        -->
         <object type="Example.Person, Spring.IocQuickStart.VariableSources">
           <property name="Name" value="${roger_name}" />
           <property name="Age" value="${roger_age}" />
         </object>
-        -->
 
       </list>
     </constructor-arg>
   </object>
 
+  <object id="specials" type="Example.Specials, Spring.IocQuickStart.VariableSources">
+    <property name="ConnectionString" value="${myConnection.connectionString}" />
+    <property name="ProviderName" value="${myConnection.providerName}" />
+    
+    <!-- System.Environment.SpecialFolder -->
+    <property name="SpecialFolder1" value="${Desktop}" />
+    <property name="SpecialFolder2" value="${ProgramFiles}" />
+
+
+  </object>
+  
 </objects>
