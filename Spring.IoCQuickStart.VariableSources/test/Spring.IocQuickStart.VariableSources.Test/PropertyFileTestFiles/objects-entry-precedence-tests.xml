@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<objects xmlns="http://www.springframework.net">
+
+  <object type="Spring.Objects.Factory.Config.VariablePlaceholderConfigurer, Spring.Core">
+    <property name="VariableSources">
+      <list>
+        
+        <!-- From a Java-style properties file: -->
+        <object type="Spring.Objects.Factory.Config.PropertyFileVariableSource, Spring.Core">
+          <property name="IgnoreMissingResources" value="true" />
+          <property name="Locations">
+            <list>
+              <value>assembly://Spring.IocQuickStart.VariableSource.Test/Spring.IocQuickStart.VariableSource.Test.PropertyFileTestFiles/application.properties</value>
+            </list>
+          </property>
+        </object>
+
+      </list>
+    </property>
+  </object>
+
+  <object id="joan" type="Example.Person, Spring.IocQuickStart.VariableSources">
+    <property name="Name" value="${joan_name}" />
+    <property name="Age" value="${joan_age}" />
+  </object>
+
+</objects>
