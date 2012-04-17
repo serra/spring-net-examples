@@ -8,8 +8,8 @@
     <ProjectGuid>{D30F2505-DA4E-4D7A-951E-70746F2CE4D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Spring.IocQuickStart.IVariableSource.Test</RootNamespace>
-    <AssemblyName>Spring.IocQuickStart.IVariableSource.Test</AssemblyName>
+    <RootNamespace>Spring.IocQuickStart.VariableSource.Test</RootNamespace>
+    <AssemblyName>Spring.IocQuickStart.VariableSource.Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\Spring.IoCQuickStart.VariableSources\</SolutionDir>
@@ -67,11 +67,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ida.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Spring.IocQuickStart.VariableSources\Spring.IocQuickStart.VariableSources.csproj">

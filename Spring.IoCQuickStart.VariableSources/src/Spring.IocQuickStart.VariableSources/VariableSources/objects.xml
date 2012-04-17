@@ -53,9 +53,7 @@
         </object>
 
         <!-- From System.Environment.GetEnvironmentVariable(): -->
-        <object type="Spring.Objects.Factory.Config.EnvironmentVariableSource, Spring.Core">
-
-        </object>
+        <object type="Spring.Objects.Factory.Config.EnvironmentVariableSource, Spring.Core" />
 
         <!-- From a custom name-value collection: -->
         <object type="Spring.Objects.Factory.Config.ConfigurableVariableSource, Spring.Core">
