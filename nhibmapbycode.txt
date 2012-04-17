@@ -1,0 +1,9 @@
+http://stackoverflow.com/questions/5777898/docs-examples-for-nhibernate-3-2-mapping-by-code
+http://notherdev.blogspot.com/2012/01/nhibernates-mapping-by-code-first.html
+http://notherdev.blogspot.com/2012/02/nhibernates-mapping-by-code-summary.html
+http://fabiomaulo.blogspot.com/2011/04/nhibernate-32-part-2-mapping-by-code.html
+http://fabiomaulo.blogspot.com/2011/04/nhibernate-32-mapping-by-code.html
+http://fabiomaulo.blogspot.com/2011/04/nhibernate-32-mapping-by-code_13.html
+http://blog.bennymichielsen.be/2009/01/04/using-fluent-nhibernate-in-spring-net/
+http://www.springframework.net/doc-latest/reference/html/dbprovider.html
+http://stackoverflow.com/questions/7264383/options-for-using-system-data-sqlite-in-a-32bit-and-64bit-c-sharp-world
