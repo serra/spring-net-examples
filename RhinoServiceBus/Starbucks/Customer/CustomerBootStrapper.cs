@@ -1,20 +1,26 @@
-using Castle.MicroKernel.Registration;
-using Rhino.ServiceBus.Castle;
 using Rhino.ServiceBus.Internal;
 using Rhino.ServiceBus.Sagas.Persisters;
+using Rhino.ServiceBus.Spring;
 
 namespace Starbucks.Customer
 {
-    public class CustomerBootStrapper : CastleBootStrapper
+    public class CustomerBootStrapper : SpringBootStrapper
     {
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
 
-            Container.Register(
-                Component.For(typeof(ISagaPersister<>))
-                    .ImplementedBy(typeof(InMemorySagaPersister<>))
-                );
+            //
+            // IMO we do not need to register a saga persister, 
+            // because the customer isn't controlled by a saga, 
+            // but by a UI controller.
+            //
+
+            // Original Castle equivalent
+            //Container.Register(
+            //    Component.For(typeof(ISagaPersister<>))
+            //        .ImplementedBy(typeof(InMemorySagaPersister<>))
+            //    );
         }
 
         protected override bool IsTypeAcceptableForThisBootStrapper(System.Type t)

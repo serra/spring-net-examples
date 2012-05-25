@@ -37,29 +37,32 @@
     <LibDir>..\..\SharedLibs\4.0\</LibDir>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core">
-      <HintPath>..\packages\Castle.Core.3.0.0.4001\lib\net40-client\Castle.Core.dll</HintPath>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.1.2.0\lib\1.0\Common.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Windsor">
-      <HintPath>..\packages\Castle.Windsor.3.0.0.4001\lib\net40\Castle.Windsor.dll</HintPath>
-    </Reference>
-    <Reference Include="Esent.Interop">
+    <Reference Include="Esent.Interop, Version=1.6.0.0, Culture=neutral, PublicKeyToken=8dd49bbdae3f61af, processorArchitecture=MSIL">
       <HintPath>..\packages\Rhino.ServiceBus.References.2.3.2.0\lib\Esent.Interop.dll</HintPath>
     </Reference>
-    <Reference Include="log4net">
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Rhino.PersistentHashTable">
+    <Reference Include="Rhino.PersistentHashTable, Version=1.7.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <HintPath>..\packages\Rhino.PersistentHashTable.1.7.0.0\lib\4.0\Rhino.PersistentHashTable.dll</HintPath>
     </Reference>
-    <Reference Include="Rhino.Queues">
+    <Reference Include="Rhino.Queues, Version=1.4.2.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <HintPath>..\packages\Rhino.Queues.1.4.2.0\lib\4.0\Rhino.Queues.dll</HintPath>
     </Reference>
-    <Reference Include="Rhino.ServiceBus">
+    <Reference Include="Rhino.ServiceBus, Version=2.3.2.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <HintPath>..\packages\Rhino.ServiceBus.2.3.2.0\lib\4.0\Rhino.ServiceBus.dll</HintPath>
     </Reference>
-    <Reference Include="Rhino.ServiceBus.Castle">
-      <HintPath>..\packages\Rhino.ServiceBus.Castle.2.3.2.0\lib\4.0\Rhino.ServiceBus.Castle.dll</HintPath>
+    <Reference Include="Rhino.ServiceBus.Spring">
+      <HintPath>..\packages\Rhino.ServiceBus.Spring.2.3.2.0\lib\4.0\Rhino.ServiceBus.Spring.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop">
+      <HintPath>..\packages\Spring.Aop.1.3.2\lib\net40\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\packages\Spring.Core.1.3.2\lib\net40\Spring.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -73,7 +76,7 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Wintellect.Threading">
+    <Reference Include="Wintellect.Threading, Version=5.0.3948.23182, Culture=neutral, PublicKeyToken=167f00fdf109b063, processorArchitecture=MSIL">
       <HintPath>..\packages\PowerThreading.20101026.0\lib\net20\Wintellect.Threading.dll</HintPath>
     </Reference>
     <Reference Include="xunit">
